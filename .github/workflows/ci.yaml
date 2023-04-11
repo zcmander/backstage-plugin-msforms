@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn install --immutable
-      - run: yarn lint:all
+      - run: yarn lint
       - run: yarn tsc
       - run: yarn build
 
@@ -44,4 +44,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn install --immutable
-      - run: yarn test:all
+      - run: yarn test
