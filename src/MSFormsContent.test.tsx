@@ -33,7 +33,7 @@ describe('MSFormsContent', () => {
           },
         }}
       >
-        <MSFormContent name={'feedback'} />
+        <MSFormContent name="feedback" />
       </EntityProvider>,
     );
 
@@ -43,7 +43,7 @@ describe('MSFormsContent', () => {
   it('should render missing annotation', () => {
     const { container } = render(
       <EntityProvider entity={ENTITY}>
-        <MSFormContent name={'feedback'} />
+        <MSFormContent name="feedback" />
       </EntityProvider>,
     );
 
