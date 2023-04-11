@@ -1,6 +1,6 @@
 # Installation
 
-Add the plugin to your fornend app:
+Add the plugin to your frontend app:
 
 ``` sh
 cd packages/app && yarn add @zcmander/backstage-plugin-msforms
@@ -22,7 +22,7 @@ import { MSFormContent, hasMSFormsAnnotation } from '@zcmander/backstage-plugin-
 
 The plugin may to provide multiple tabs per entity depending on configuration in your application. The `hasMSFormsAnnotation` hides the tab if annotation is not present.
 
-In this case `feedback` means suffix in entity annotations, so entity must have annotation like this to tab to show up in the page.
+In this example `feedback` means suffix in entity annotations, so entity must have `forms.office.com/feedback` annotation to show up in the page.
 
 Then visiting the form that you want to show up in the entity page:
 
