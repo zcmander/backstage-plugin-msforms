@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MSFormsContent should render 1`] = `
+<div>
+  <iframe
+    allowfullscreen=""
+    frameborder="0"
+    height="100%"
+    marginheight="0"
+    marginwidth="0"
+    src="https://example.org/?embed=true"
+    style="max-width: 100%; max-height: 100vh;"
+    title="Embedded form"
+    width="100%"
+  />
+</div>
+`;
+
+exports[`MSFormsContent should render missing annotation 1`] = `
+<div>
+  <div
+    class="MuiGrid-root BackstageEmptyState-root-2 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-flex-start MuiGrid-justify-content-xs-space-around"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+        >
+          <h5
+            class="MuiTypography-root MuiTypography-h5"
+          >
+            Missing Annotation
+          </h5>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            The 
+            annotation
+             
+            <code>
+              forms.office.com/feedback
+            </code>
+             
+            is
+             missing. You need to add the
+             
+            annotation
+             to your component if you want to enable this tool.
+          </p>
+        </div>
+        <div
+          class="MuiGrid-root BackstageEmptyState-action-3 MuiGrid-item MuiGrid-grid-xs-true"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            Add the annotation to your component YAML as shown in the highlighted example below:
+          </p>
+          <div
+            class="MuiBox-root MuiBox-root-5 BackstageMissingAnnotationEmptyState-code-1"
+          >
+            <div
+              class="MuiBox-root MuiBox-root-6"
+            >
+              <pre
+                style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(0, 0, 0); font-size: 115%;"
+              >
+                <code
+                  style="float: left; padding-right: 10px;"
+                >
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    1
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    2
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    3
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    4
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    5
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    6
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    7
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    8
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    9
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    10
+
+                  </span>
+                  <span
+                    class="react-syntax-highlighter-line-number"
+                  >
+                    11
+
+                  </span>
+                </code>
+                <code
+                  class="language-yaml"
+                  style="white-space: pre;"
+                >
+                  apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example
+  description: example.com
+  annotations:
+    forms.office.com/feedback: value
+spec:
+  type: website
+  lifecycle: production
+  owner: user:guest
+                </code>
+              </pre>
+            </div>
+          </div>
+          <a
+            aria-disabled="false"
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover Link-externalLink-8 MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiTypography-colorPrimary"
+            href="https://github.com/zcmander/backstage-plugin-msforms"
+            rel="noopener"
+            role="button"
+            tabindex="0"
+            target="_blank"
+            to="https://github.com/zcmander/backstage-plugin-msforms"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Read more
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+            <span
+              class="MuiTypography-root Link-visuallyHidden-7 MuiTypography-body1"
+            >
+              , Opens in a new window
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root BackstageEmptyState-imageContainer-4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <img
+        alt="annotation is missing"
+        class="BackstageEmptyStateImage-generalImg-9"
+        src="missingAnnotation.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
