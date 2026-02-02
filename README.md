@@ -10,7 +10,6 @@ Find [installation instructions](./docs/setup.md) in our documentation.
 
 ![Entity page](./docs/images/entity_page.png)
 
-
 ## License
 
 This plugin is under the [MIT](LICENSE) license.

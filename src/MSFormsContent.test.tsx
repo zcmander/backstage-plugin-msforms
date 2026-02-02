@@ -1,26 +1,26 @@
-import { render } from '@testing-library/react';
-import { EntityProvider } from '@backstage/plugin-catalog-react';
-import { MSFormContent } from './MSFormsContent';
-import React from 'react';
-import { Entity } from '@backstage/catalog-model';
+import { render } from "@testing-library/react";
+import { EntityProvider } from "@backstage/plugin-catalog-react";
+import { MSFormContent } from "./MSFormsContent";
+import React from "react";
+import { Entity } from "@backstage/catalog-model";
 
 const ENTITY: Entity = {
-  apiVersion: 'backstage.io/v1alpha1',
-  kind: 'Component',
+  apiVersion: "backstage.io/v1alpha1",
+  kind: "Component",
   metadata: {
-    name: 'example-website',
+    name: "example-website",
   },
   spec: {
-    type: 'website',
-    lifecycle: 'experimental',
-    owner: 'guests',
-    system: 'examples',
-    providesApis: ['example-grpc-api'],
+    type: "website",
+    lifecycle: "experimental",
+    owner: "guests",
+    system: "examples",
+    providesApis: ["example-grpc-api"],
   },
 };
 
-describe('MSFormsContent', () => {
-  it('should render', () => {
+describe("MSFormsContent", () => {
+  it("should render", () => {
     const { container } = render(
       <EntityProvider
         entity={{
@@ -28,7 +28,7 @@ describe('MSFormsContent', () => {
           metadata: {
             ...ENTITY.metadata,
             annotations: {
-              'forms.office.com/feedback': 'https://example.org',
+              "forms.office.com/feedback": "https://example.org",
             },
           },
         }}
@@ -40,7 +40,7 @@ describe('MSFormsContent', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render missing annotation', () => {
+  it("should render missing annotation", () => {
     const { container } = render(
       <EntityProvider entity={ENTITY}>
         <MSFormContent name="feedback" />

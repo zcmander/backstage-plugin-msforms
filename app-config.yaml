@@ -1,0 +1,44 @@
+app:
+  title: MSForms Dev App
+  baseUrl: http://localhost:3000
+  extensions:
+    - entity-content:msforms/entity-ms-forms:
+        config:
+          name: "survey"
+backend:
+  baseUrl: http://localhost:7007
+  auth:
+    dangerouslyDisableDefaultAuthPolicy: true
+  listen:
+    port: 7007
+  cache:
+    store: memory
+  cors:
+    origin: http://localhost:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+  csp:
+    connect-src: ["'self'", "http:", "https:"]
+  reading:
+    allow:
+      - host: localhost
+
+auth:
+  environment: development
+  providers:
+    guest: {}
+
+catalog:
+  orphanStrategy: delete
+  processingInterval: { minutes: 1 }
+  rules:
+    - allow: [Component, API, Resource, User, Group, System]
+  locations:
+    - type: file
+      target: local_dev.yaml
+
+msforms:
+  entityMapping:
+    - kind: system
+      name: test-system
+      url: https://forms.office.com/Pages/ResponsePage.aspx?id=Avmi4XIhT0eoihiexPCD_TOJzuyPsv9BpOGydXnVYltUMEhBVVFMNVI4V0pISUJYSERXOTk4N0tFMC4u

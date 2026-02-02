@@ -2,7 +2,7 @@
 
 Add the plugin to your frontend app:
 
-``` sh
+```sh
 cd packages/app && yarn add @zcmander/backstage-plugin-msforms
 ```
 

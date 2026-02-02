@@ -1,0 +1,35 @@
+# Contains entities used for local development
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: test-system
+  description: Test system
+spec:
+  lifecycle: experimental
+  owner: user:development/guest
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-component
+  description: Test component
+  annotations:
+    "forms.office.com/survey": https://forms.office.com/Pages/ResponsePage.aspx?id=Avmi4XIhT0eoihiexPCD_TOJzuyPsv9BpOGydXnVYltUMEhBVVFMNVI4V0pISUJYSERXOTk4N0tFMC4u
+spec:
+  type: repository
+  lifecycle: experimental
+  owner: user:development/guest
+  system: system:default/test-system
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+  title: Guest User
+  namespace: development
+spec:
+  memberOf:
+    - group:default/test-group
+  profile:
+    displayName: Guest User
+    email: foobar@foo.com
