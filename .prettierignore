@@ -1,0 +1,10 @@
+dist
+dist-types
+coverage
+.vscode
+.idea
+app-config.yaml
+.yarn
+CHANGELOG.md
+playwright-report
+test-results

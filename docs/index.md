@@ -2,4 +2,4 @@
 
 ## Installation
 
-* [Plugin setup](setup.md)
+- [Plugin setup](setup.md)

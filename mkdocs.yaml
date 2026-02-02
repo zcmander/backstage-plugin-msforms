@@ -1,5 +1,5 @@
-site_name: 'Microsoft Forms plugin for Backstage'
-site_description: 'Embed a form into the entity page with ease!'
+site_name: "Microsoft Forms plugin for Backstage"
+site_description: "Embed a form into the entity page with ease!"
 
 nav:
   - Home: index.md
