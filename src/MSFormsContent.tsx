@@ -1,6 +1,5 @@
-import { useEntity } from "@backstage/plugin-catalog-react";
+import { MissingAnnotationEmptyState, useEntity } from "@backstage/plugin-catalog-react";
 import { MSFORMS_PREFIX, READ_MORE_URL } from "./common";
-import { MissingAnnotationEmptyState } from "@backstage/core-components";
 import { configApiRef, useApi } from "@backstage/core-plugin-api";
 import { getConfiguredUrl } from "./util";
 
@@ -29,6 +28,9 @@ export const MSFormContent = ({
   }
 
   const url = new URL(annotation ?? formsUrl ?? configured);
+  if (url.host !== "forms.office.com") {
+    throw new Error("Invalid URL, must match forms.office.com");
+  }
   url.searchParams.append("embed", "true");
 
   return (

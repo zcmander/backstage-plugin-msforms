@@ -1,4 +1,5 @@
 import { createApp } from "@backstage/frontend-defaults";
+// eslint-disable-next-line @backstage/no-undeclared-imports
 import { createRoot } from "react-dom/client";
 import catalogPlugin from "@backstage/plugin-catalog/alpha";
 

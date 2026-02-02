@@ -4,12 +4,9 @@ exports[`MSFormsContent should render 1`] = `
 <div>
   <iframe
     allowfullscreen=""
-    frameborder="0"
     height="100%"
-    marginheight="0"
-    marginwidth="0"
-    src="https://example.org/?embed=true"
-    style="max-width: 100%; max-height: 100vh;"
+    src="https://forms.office.com/apua?embed=true"
+    style="max-width: 100%; max-height: 100vh; margin: 0px;"
     title="Embedded form"
     width="100%"
   />
