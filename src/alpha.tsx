@@ -27,8 +27,8 @@ const EntityMsForms = EntityContentBlueprint.makeWithOverrides({
         return configured !== undefined;
       },
       loader: async () => {
-        return import("./MSFormsContent.tsx").then((m) =>
-          compatWrapper(<m.MSFormContent name={config.name ?? "survey"} />),
+        return import("./MSFormsEntityPage.tsx").then((m) =>
+          compatWrapper(<m.MSFormsEntityPage name={config.name ?? "survey"} />),
         );
       },
     });

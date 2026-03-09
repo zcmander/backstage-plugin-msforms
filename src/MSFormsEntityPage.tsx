@@ -1,50 +1,23 @@
-import { catalogApiRef, MissingAnnotationEmptyState } from "@backstage/plugin-catalog-react";
+import { MissingAnnotationEmptyState, useEntity } from "@backstage/plugin-catalog-react";
 import { MSFORMS_PREFIX, READ_MORE_URL } from "./common";
 import { configApiRef, useApi } from "@backstage/core-plugin-api";
 import { getConfiguredUrl } from "./util";
-import { useAsync } from "react-use";
-import { Entity } from "@backstage/catalog-model";
-import { AsyncState } from "react-use/lib/useAsyncFn";
-import { ErrorDisplay, Progress } from "@backstage/frontend-plugin-api";
 
-export const MSFormsContent = ({
+export const MSFormsEntityPage = ({
   name,
   formsUrl,
-  entityRef
 }: {
   name: string;
   formsUrl?: string;
-  entityRef?: string;
-}): JSX.Element => {
-    const catalog = useApi(catalogApiRef);
+}) => {
+  const entity = useEntity().entity;
 
   const configApi = useApi(configApiRef);
-
-  const entity: AsyncState<Entity|null> = useAsync(async () => {
-    return entityRef ? catalog.getEntityByRef(entityRef) : null;
-    }, [catalog, entityRef]);
-
-  if (entity.loading) {
-    return <Progress />;
-  }
-
-  if (entity.error) {
-    return (<ErrorDisplay error={entity.error} resetError={() => {
-      window.location.reload();
-    }} />);
-  }
-
-  if (!entity.value) {
-    return <div>Entity not found</div>;
-  }
-
-
-  const configured = getConfiguredUrl(entity.value, configApi);
-
+  const configured = getConfiguredUrl(entity, configApi);
 
   const annotationKey = `${MSFORMS_PREFIX}/${name}`;
 
-  const annotation = (entity.value.metadata.annotations || {})[annotationKey];
+  const annotation = (entity.metadata.annotations || {})[annotationKey];
   if (!annotation && !formsUrl && !configured) {
     return (
       <MissingAnnotationEmptyState

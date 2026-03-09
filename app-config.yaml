@@ -26,7 +26,8 @@ backend:
 auth:
   environment: development
   providers:
-    guest: {}
+    guest:
+      dangerouslyAllowOutsideDevelopment: true
 
 catalog:
   orphanStrategy: delete

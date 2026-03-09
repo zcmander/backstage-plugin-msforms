@@ -1,3 +1,4 @@
 export { msformsPlugin } from "./plugin";
-export { MSFormContent } from "./MSFormsContent";
+export { MSFormsEntityPage } from "./MSFormsEntityPage";
+export { MSFormsContent } from "./MSFormsContent";
 export { hasMSFormsAnnotation } from "./hasMSFormsAnnotation";
