@@ -1,7 +1,7 @@
 import { catalogApiRef, MissingAnnotationEmptyState } from "@backstage/plugin-catalog-react";
 import { MSFORMS_PREFIX, READ_MORE_URL } from "./common";
 import { configApiRef, useApi } from "@backstage/core-plugin-api";
-import { getConfiguredUrl } from "./util";
+import { getConfiguredUrl, getEmbeddedUrl } from "./util";
 import { useAsync } from "react-use";
 import { Entity } from "@backstage/catalog-model";
 import { AsyncState } from "react-use/lib/useAsyncFn";
@@ -54,11 +54,7 @@ export const MSFormsContent = ({
     );
   }
 
-  const url = new URL(annotation ?? formsUrl ?? configured);
-  if (url.host !== "forms.office.com") {
-    throw new Error("Invalid URL, must match forms.office.com");
-  }
-  url.searchParams.append("embed", "true");
+  const url = getEmbeddedUrl(annotation ?? formsUrl ?? configured);
 
   return (
     <iframe

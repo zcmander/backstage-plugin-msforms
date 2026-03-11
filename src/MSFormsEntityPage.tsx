@@ -1,7 +1,7 @@
 import { MissingAnnotationEmptyState, useEntity } from "@backstage/plugin-catalog-react";
 import { MSFORMS_PREFIX, READ_MORE_URL } from "./common";
 import { configApiRef, useApi } from "@backstage/core-plugin-api";
-import { getConfiguredUrl } from "./util";
+import { getConfiguredUrl, getEmbeddedUrl } from "./util";
 
 export const MSFormsEntityPage = ({
   name,
@@ -27,18 +27,14 @@ export const MSFormsEntityPage = ({
     );
   }
 
-  const url = new URL(annotation ?? formsUrl ?? configured);
-  if (url.host !== "forms.office.com") {
-    throw new Error("Invalid URL, must match forms.office.com");
-  }
-  url.searchParams.append("embed", "true");
+  const embeddedUrl = getEmbeddedUrl(annotation ?? formsUrl ?? configured);
 
   return (
     <iframe
       title="Embedded form"
       width="100%"
       height="100%"
-      src={url.toString()}
+      src={embeddedUrl}
       style={{
         border: "none",
         maxWidth: "100%",
